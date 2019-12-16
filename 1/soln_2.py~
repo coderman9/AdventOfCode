@@ -1,0 +1,12 @@
+with open("input", "r") as f:
+    input = f.readlines()
+
+initial_fuel = 3234871 #from previous
+
+def f(x):
+    fuel_required = x//3 - 2
+    if fuel_required >=1:
+        fuel_required += f(fuel_required)
+    return fuel_required
+
+print(f(initial_fuel))
